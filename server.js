@@ -18,7 +18,7 @@ function logger(req, res, next) {
    const time = new Date().toLocaleTimeString();
    const date = new Date().toLocaleDateString();
    console.log(
-      `${req.method} Request | http://localhost:4000${req.url} | ${date} , ${time}`
+      `${req.method} Request | http://localhost:3000${req.url} | ${date} , ${time}`
    );
    next();
 }
