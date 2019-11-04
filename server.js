@@ -1,12 +1,14 @@
 const express = require('express');
 const helmet = require('helmet');
-const db = require('./data/dbConfig.js');
 
+const accountRouter = require('./accountRouter');
 const server = express();
 
 server.use(express.json());
 server.use(helmet());
 server.use(logger);
+
+server.use('/api/accounts', accountRouter);
 
 server.get('/', (req, res) => {
    res.status(200).json({ message: 'Server is Running' });
